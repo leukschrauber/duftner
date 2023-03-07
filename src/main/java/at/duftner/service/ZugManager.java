@@ -15,6 +15,8 @@ public class ZugManager {
       for(Zug alterZug : this.zuege) {
          for(ZugTeil neuerZugTeil : neuerZug.getZugTeile()) {
             for (ZugTeil alterZugTeil : alterZug.getZugTeile()) {
+               //Die Pruefung der Gleichheit zweier Zugteile erfolgt der Einfachheit halber per Referenz.
+               //In einem echten Projekt, hätten die Zugteile IDs aus der Datenbank, die sie identifizieren.
                if (neuerZugTeil == alterZugTeil) {
                   throw new IllegalArgumentException("Ein ZugTeil wurde bereits in einem anderen Zug verplant.");
                }

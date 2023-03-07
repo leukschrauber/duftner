@@ -72,6 +72,7 @@ public class Zug {
    }
 
    public List<ZugTeil> getZugTeile() {
+      //TODO: Deep-Copy statt Shallow-Copy, um ungewuenschte Seiteneffekte (s. initialisere()) zu vermeiden.
       return Stream.concat(this.waggons.stream(), this.lokomotiven.stream()).collect(Collectors.toList());
    }
 
